@@ -13,15 +13,19 @@ public class App
         int pesoMaxEjemplo=98;
 
         int [] pobladosEjemploOrdenado=Array.toDecreasingOrder(pobladosEjemplo);
-        //Array.display(pobladosEjemplo);
+        Array.display(pobladosEjemploOrdenado);
+        System.out.println();
 
         int totalWeight=0;
-        for (int i : pobladosEjemploOrdenado) {
-            if(pobladosEjemploOrdenado[i]+totalWeight<pesoMaxEjemplo && i<=maxPobladosEjemplo)
-            totalWeight=totalWeight+pobladosEjemploOrdenado[i];
-            System.out.println(i);
+        int i=0;
+        int pobladosObtenidos=0;
+        while(totalWeight<pesoMaxEjemplo && pobladosObtenidos<maxPobladosEjemplo){
+            if((totalWeight+pobladosEjemploOrdenado[i])<=pesoMaxEjemplo){
+                totalWeight=totalWeight+pobladosEjemploOrdenado[i];
+                pobladosObtenidos++;
+            }
+            i++;
         }
-
         System.out.println(totalWeight);
     }
 }
