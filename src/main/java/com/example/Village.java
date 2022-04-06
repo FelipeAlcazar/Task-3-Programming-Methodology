@@ -1,6 +1,8 @@
 package com.example;
 
-public class Village {
+import java.util.List;
+
+public class Village implements Comparable<Village> {
     private int id;
     private int weight;
     
@@ -9,16 +11,11 @@ public class Village {
         this.weight = weight;
     }
 
-    public int compareTo(Village village) {
-        return village.getWeight()<=this.getWeight() ? this.id : village.id;
-    }
-
-    public Village[] getVillages(int[] array){
-        Village[] villages=new Village[array.length];
-        for (int i : array) {
-            villages[i]=new Village(i, array[i]);
+    public static void display(List<Village> villages){
+        for (Village village : villages) {
+            System.out.print(village.getWeight()+" ");
         }
-        return villages;
+        System.out.println();
     }
 
     public int getId() {
@@ -39,6 +36,11 @@ public class Village {
 
     @Override
     public String toString() {
-        return "Village [id=" + id + ", weight=" + weight + "]";
+        return "Village " + id + ", " + weight+"kg collected";
+    }
+
+    @Override
+    public int compareTo(Village village) {
+        return Integer.compare(this.weight,village.getWeight());
     }
 }
