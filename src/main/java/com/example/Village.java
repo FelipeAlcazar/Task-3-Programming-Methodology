@@ -13,7 +13,7 @@ public class Village {
         return village.getWeight()<=this.getWeight() ? this.id : village.id;
     }
 
-    public Village[] getSledge(int[] array){
+    public Village[] getVillages(int[] array){
         Village[] villages=new Village[array.length];
         for (int i : array) {
             villages[i]=new Village(i, array[i]);
