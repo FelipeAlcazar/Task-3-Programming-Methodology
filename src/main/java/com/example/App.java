@@ -4,8 +4,30 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+
+/*********************************************************************
+*
+* Class Name: App
+* Author/s name: Felipe and Elena
+* Class description: In this class we execute de program.
+*
+**********************************************************************
+*/
+
+
 public class App 
 {
+
+    /*********************************************************************
+    *
+    * Method name: main
+    *
+    * Description of the Method: In this method we take all the kg of the villages and created a list,
+    * whit all the data we create the route.
+    *
+    * Required Files: Villages.txt, it's a file with all the villages and the kg of food.
+    *
+    *********************************************************************/
     public static void main( String[] args )
     {
         int maxVillages=7;
@@ -31,6 +53,19 @@ public class App
         System.out.println("Result: "+visitedVillages+" villages visited and "+currentWeight+"kg of weight collected");
 
     }
+
+    /*********************************************************************
+    *
+    * Method name: getVillage
+    *
+    * Description of the Method: This method creates the List of the villages.
+    *
+    * Calling arguments: A list of the calling arguments, their types, and
+    * brief explanations of what they do.
+    *
+    * Return value: List, villages.
+    *
+    *********************************************************************/
 
     public static List<Village> getVillages(List<Integer> array){
         List<Village> villages = new ArrayList<>(array.size());

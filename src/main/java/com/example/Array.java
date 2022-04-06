@@ -11,7 +11,8 @@ import java.util.Scanner;
 /*********************************************************************
 *
 * Class Name: Array
-* Class description: 
+* Class description: In this class read the file.
+*
 **********************************************************************
 */
 
@@ -21,7 +22,7 @@ public class Array {
     *
     * Method name: fileArray
     *
-    * Description of the Method: This method read a file and convert the values to an array .
+    * Description of the Method: This method read a file and convert the values to a list .
     *
     * Calling arguments: String fileName, It's the file that we are going to read.
     *
