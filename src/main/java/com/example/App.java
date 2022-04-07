@@ -43,12 +43,15 @@ public class App
         int visitedVillages=0;
         int currentWeight=0;
         System.out.println("Route to follow: ");
-        for (int i=0;i<villages.size() && visitedVillages<=maxVillages;i++) {
+
+        int i=0;
+        while(visitedVillages<=maxVillages && currentWeight<pesoMax){
             if(currentWeight+villages.get(i).getWeight()<=pesoMax && villages.get(i).getWeight()!=0){
                 System.out.println(villages.get(i).toString());
                 visitedVillages++;
                 currentWeight=currentWeight+villages.get(i).getWeight();
             }
+            i++;
         }
         System.out.println("Result: "+visitedVillages+" villages visited and "+currentWeight+"kg of weight collected");
 
