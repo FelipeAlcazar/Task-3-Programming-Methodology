@@ -30,8 +30,19 @@ public class App
     *********************************************************************/
     public static void main( String[] args )
     {
-        int maxVillages=7;
-        int pesoMax=98;
+       nt Villages=(int) (Math.random()*3000);
+        
+        //int Villages=90;
+        int maxVillages=(int) (Math.random()*Villages);
+       
+        //int maxVillages=7;
+        int peso= (int) (Math.random()*300);
+       
+        //int pesoMax=98;
+        int pesoMax=(maxVillages*peso)/2;
+       
+       // int[] randomarray=Array.randomArray(Villages,peso);
+        Array.generateFile(Villages, peso,"Villages.txt");
         List<Integer> pobladosEjemplo=Array.fileArray("Villages.txt");
         List<Village> villages=getVillages(pobladosEjemplo);
         System.out.println("Total villages: "+villages.size()+"\n"+"Total villages to be visited in a day: "+maxVillages+"\n"+"Maximum weight of the sledge: "+pesoMax);
