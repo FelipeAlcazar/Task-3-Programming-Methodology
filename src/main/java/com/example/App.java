@@ -3,6 +3,7 @@ package com.example;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Scanner;
 
 
 /*********************************************************************
@@ -30,20 +31,23 @@ public class App
     *********************************************************************/
     public static void main( String[] args )
     {
-      
-        int Villages=(int) (Math.random()*3000);  //Number of total Villages
+        Scanner reader = new Scanner(System.in);
+        System.out.println("Introduce the number of Villages");
+        int Villages= reader.nextInt();  //Number of total Villages
         
         //int Villages=90;
         int maxVillages=(int) (Math.random()*Villages); //Max villages for visit in a day
        
         //int maxVillages=7;
-        int peso= (int) (Math.random()*300); //Maximum vale of kg for village
-       
+        System.out.println("Introduce the maximun weight for village");
+        int peso= reader.nextInt(); //Maximum value of kg for village
+        reader.close();
         //int pesoMax=98;
         int pesoMax=(maxVillages*peso)/2; //Maximun kg for sledges
        
        // int[] randomarray=Array.randomArray(Villages,peso);
         Array.generateFile(Villages, peso,"Villages.txt"); //Method for generate a file with the data before
+        
         List<Integer> pobladosEjemplo=Array.fileArray("Villages.txt");
         List<Village> villages=getVillages(pobladosEjemplo);
         System.out.println("Total villages: "+villages.size()+"\n"+"Total villages to be visited in a day: "+maxVillages+"\n"+"Maximum weight of the sledge: "+pesoMax);
