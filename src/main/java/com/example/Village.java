@@ -5,7 +5,7 @@ import java.util.List;
 /*********************************************************************
 *
 * Class Name: Village
-*
+* Author/s name: Felipe Alcázar Gómez and Elena Megía Cañaveras.
 * Class description: In this class we create the object Village with two atributes
 * id and weight.
 *
