@@ -1,5 +1,6 @@
 package com.example;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -27,9 +28,10 @@ public class App
     * whit all the data we create the route.
     *
     * Required Files: Villages.txt, it's a file with all the villages and the kg of food.
+     * @throws IOException
     *
     *********************************************************************/
-    public static void main( String[] args )
+    public static void main( String[] args ) throws IOException
     {
         Scanner reader = new Scanner(System.in);
         System.out.println("Introduce the number of Villages");
@@ -45,6 +47,8 @@ public class App
         //int pesoMax=98;
         int pesoMax=(maxVillages*peso)/2; //Maximun kg for sledges
        
+        Array.deleteFile("Villages.txt");
+
        // int[] randomarray=Array.randomArray(Villages,peso);
         Array.generateFile(Villages, peso,"Villages.txt"); //Method for generate a file with the data before
         
@@ -93,4 +97,6 @@ public class App
         }
         return villages;
     }
+
+   
 }

@@ -112,4 +112,8 @@ public class Array {
         }
     }    
     
+    public static void deleteFile(String FileName) throws IOException{
+        new FileWriter(FileName, false).close();
+    }
+
 }
