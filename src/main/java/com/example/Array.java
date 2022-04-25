@@ -112,6 +112,18 @@ public class Array {
         }
     }    
     
+     /*********************************************************************
+    *
+    * Method name: deleteFile
+    *
+    * Description of the Method: In this method we delete the previous data of the file
+    *
+    * Calling arguments: String, filename, the name of the file to be created.
+    *
+    * Checked Exceptions: 
+    * Exception: if the file cannot be written the exception is thrown.
+    *
+    *********************************************************************/
     public static void deleteFile(String FileName) throws IOException{
         new FileWriter(FileName, false).close();
     }
