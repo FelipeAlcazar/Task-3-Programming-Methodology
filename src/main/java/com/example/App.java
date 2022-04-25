@@ -8,7 +8,7 @@ import java.util.List;
 /*********************************************************************
 *
 * Class Name: App
-* Author/s name: Felipe and Elena
+* Author/s name: Felipe Alcázar Gómez and Elena Megía Cañaveras.
 * Class description: In this class we execute de program.
 *
 **********************************************************************
