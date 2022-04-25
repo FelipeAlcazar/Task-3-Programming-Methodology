@@ -14,7 +14,8 @@ import java.io.FileWriter;
 /*********************************************************************
 *
 * Class Name: Array
-* Class description: In this class read the file.
+* Author/s name: Felipe Alcázar Gómez and Elena Megía Cañaveras.
+* Class description: In this class we create an array, create a file and read a file.
 *
 **********************************************************************
 */
