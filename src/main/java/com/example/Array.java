@@ -6,6 +6,9 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
 
 
 /*********************************************************************
@@ -54,4 +57,45 @@ public class Array {
 
         return integers;
     }
+    
+     public static int[] randomArray(int size, int ls){
+        int[] vector=new int[size];
+
+        for(int i=0;i<vector.length;i++){
+            vector[i]=(int) ((Math.random()*(ls-0))+0);
+        }
+
+        return vector;
+    }
+
+    /*********************************************************************
+    *
+    * Method name: generateFile
+    *
+    * Description of the Method: In this method we create a file with the values of the array
+    *
+    * Calling arguments: int, N, size of the array.
+    *                    int, ls, it is the maximum value that a number can take in the array.
+    *                    String, filename, the name of the file to be created.
+    *
+    * Checked Exceptions: 
+    * Exception: if the file cannot be written the exception is thrown.
+    *
+    *********************************************************************/
+    
+    
+    public static void generateFile(int N, int ls, String fileName){
+    	try{
+            BufferedWriter writer = new BufferedWriter(new FileWriter(new File(fileName),true));
+            int [] vector=randomArray(N, ls);
+            for(int i=0;i<vector.length;i++){
+            	writer.write(Integer.toString(vector[i]));
+            	writer.newLine();
+            }
+            writer.close();
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+    }    
+    
 }
