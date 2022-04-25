@@ -58,6 +58,19 @@ public class Array {
         return integers;
     }
     
+    /*********************************************************************
+    *
+    * Method name: randomArray
+    *
+    * Description of the Method: In this method we create an array with random numbers.
+    *
+    * Calling arguments: int size, it is the size of the array we are going to create
+    * int ls, it is the maximum value that a number can take in the array.
+    *
+    * Return value: int[], vector, we return a one-dimensional array.
+    *
+    *********************************************************************/
+
      public static int[] randomArray(int size, int ls){
         int[] vector=new int[size];
 
