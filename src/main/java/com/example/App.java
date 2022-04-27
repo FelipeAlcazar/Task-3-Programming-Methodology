@@ -33,23 +33,30 @@ public class App
     *********************************************************************/
     public static void main( String[] args ) throws IOException
     {
+        System.out.println("Welcome to the program, you are going to help naja on her trip by obtaining the best route she must take.\n");
         Scanner reader = new Scanner(System.in);
-        System.out.println("Introduce the number of Villages");
-        int Villages= reader.nextInt();  //Number of total Villages
+
+        int Villages=0, maxVillages, peso;
+        do{
+            System.out.println("Introduce the total number of Villages:");
+            Villages= reader.nextInt();  //Number of total Villages
+        }while(Villages<=0);
         
-        //int Villages=90;
-        int maxVillages=(int) (Math.random()*Villages); //Max villages for visit in a day
+        do{
+            maxVillages=(int) (Math.random()*Villages); //Max villages to be visited in a day
+        }while(maxVillages==0);
        
-        //int maxVillages=7;
-        System.out.println("Introduce the maximun weight for village");
-        int peso= reader.nextInt(); //Maximum value of kg for village
+        do{
+            System.out.println("Introduce the maximun weight for each village:");
+            peso=reader.nextInt(); //Maximum value of kg a village may offer
+        }while(peso<=0);
+
         reader.close();
-        //int pesoMax=98;
-        int pesoMax=(maxVillages*peso)/2; //Maximun kg for sledges
+
+        int pesoMax=(maxVillages*peso)/2; //Maximun kg the slege can withstand
        
         Array.deleteFile("Villages.txt");
 
-       // int[] randomarray=Array.randomArray(Villages,peso);
         Array.generateFile(Villages, peso,"Villages.txt"); //Method for generate a file with the data before
         
         List<Integer> pobladosEjemplo=Array.fileArray("Villages.txt");
@@ -65,7 +72,7 @@ public class App
         System.out.println("Route to follow: ");
 
         int i=0;
-        while(visitedVillages<=maxVillages && currentWeight<pesoMax){
+        while(visitedVillages<maxVillages && currentWeight<pesoMax && i<Villages){
             if(currentWeight+villages.get(i).getWeight()<=pesoMax && villages.get(i).getWeight()!=0){
                 System.out.println(villages.get(i).toString());
                 visitedVillages++;
@@ -73,7 +80,7 @@ public class App
             }
             i++;
         }
-        System.out.println("Result: "+visitedVillages+" villages visited and "+currentWeight+"kg of weight collected");
+        System.out.println("Result: "+visitedVillages+" village/s visited and "+currentWeight+"kg of weight collected");
 
     }
 
